@@ -136,3 +136,7 @@ container {
     color: #777;
   }
 }
+
+.MyProfileLabel{
+  text-align: center;
+}
