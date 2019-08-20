@@ -12,7 +12,10 @@
   <!-- Bootstrap -->
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/estilo.css" rel="stylesheet">
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
 </head>
 
 
@@ -24,7 +27,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <div class="collapse navbar-collapse navbar-nav" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="inicio.html">Inicio <span class="sr-only">(página atual)</span></a>
@@ -32,11 +35,23 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Consultas
+
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="consultaClientes.html">Clientes</a>
+            <a class="dropdown-item" href="consultaProcedimento.html">Procedimentos</a>
+            <a class="dropdown-item" href="ConsultaHistorico.html">Histórico</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cadastro
+
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="CadastroCliente.html">Clientes</a>
+            <a class="dropdown-item" href="CadastroProcedimento.html">Procedimentos</a>
+            <a class="dropdown-item" href="CadastroTransacao.html">Transação</a>
           </div>
         </li>
 
@@ -44,86 +59,86 @@
           <a class="nav-link" href="relatorios.html">Relatórios</a>
         </li>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="configuracoes.html">Configurações</a>
-      </li>
-
-      
+     
     </ul>
 
     <ul class="nav navbar-nav ml-auto">
+       <li class="nav-item">
+        <a class="nav-link" href="configuracoes.html">Configurações</a>
+      </li>
      <li class="nav-item">
       <a class="nav-link" href="configuracoes.html">Perfil</a>
     </li>
   </ul>
 </div>
 </nav>
+
 </header>
 
 <div class="container">
   <div class="MyProfile">
-      <h1>Meu perfil</h1>
+    <h1>Meu perfil</h1>
   </div>
 
   <hr>
-    <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-      <h3>Dados</h3>
+  <!-- edit form column -->
+  <div class="col-md-9 personal-info">
+    <h3>Dados</h3>
 
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Nome</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Nome</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text">
         </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Sobrenome</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Sobrenome</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text">
         </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Company:</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text" value="">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Company:</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text" value="">
         </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Email</label>
-          <div class="col-lg-8">
-            <input class="form-control" type="text">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Email</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text">
         </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Usuário</label>
-          <div class="col-md-8">
-            <input class="form-control" type="text">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label">Usuário</label>
+        <div class="col-md-8">
+          <input class="form-control" type="text">
         </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Nova senha</label>
-          <div class="col-md-8">
-            <input class="form-control" type="password">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label">Nova senha</label>
+        <div class="col-md-8">
+          <input class="form-control" type="password">
         </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Confirmar nova senha</label>
-          <div class="col-md-8">
-            <input class="form-control" type="password>
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label">Confirmar nova senha</label>
+        <div class="col-md-8">
+          <input class="form-control" type="password>
         </div>
-        <div class="form-group>
-          <label class="col-md-3 control-label"></label>
-          <div class="col-md-8">
-            <input type="button" class="btn btn-primary" value="Salvar">
-            <span></span>
-            <input type="reset" class="btn btn-default" value="Cancelar">
-          </div>
+      </div>
+      <div class="form-group>
+        <label class="col-md-3 control-label"></label>
+        <div class="col-md-8">
+          <input type="button" class="btn btn-primary" value="Salvar">
+          <span></span>
+          <input type="reset" class="btn btn-default" value="Cancelar">
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+</div>
 </div>
 <hr>
 </body>
