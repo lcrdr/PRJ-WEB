@@ -4,15 +4,112 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Início</title>
 
+
+  <!-- <link href='packages/core/main.css' rel='stylesheet' />
+  <link href='packages/daygrid/main.css' rel='stylesheet' />
+  <link href='packages/timegrid/main.css' rel='stylesheet' />
+  <script src='packages/core/main.js'></script>
+  <script src='packages/interaction/main.js'></script>
+  <script src='packages/daygrid/main.js'></script>
+  <script src='packages/timegrid/main.js'></script> -->
   <!-- Bootstrap -->
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/estilo.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</script>
+
+<!-- <script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      defaultDate: '2019-08-12',
+      navLinks: true, // can click day/week names to navigate views
+      selectable: true,
+      selectMirror: true,
+      select: function(arg) {
+        var title = prompt('Event Title:');
+        if (title) {
+          calendar.addEvent({
+            title: title,
+            start: arg.start,
+            end: arg.end,
+            allDay: arg.allDay
+          })
+        }
+        calendar.unselect()
+      },
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+      {
+        title: 'Evento 1',
+        start: '2019-08-01'
+      },
+      {
+        title: 'Evento 2',
+        start: '2019-08-07',
+        end: '2019-08-10'
+      },
+      {
+        groupId: 999,
+        title: 'Evento 3',
+        start: '2019-08-09T16:00:00'
+      },
+      {
+        groupId: 999,
+        title: 'Evento 4',
+        start: '2019-08-16T16:00:00'
+      },
+      {
+        title: 'Evento 5',
+        start: '2019-08-11',
+        end: '2019-08-13'
+      },
+      {
+        title: 'Evento 6',
+        start: '2019-08-12T10:30:00',
+        end: '2019-08-12T12:30:00'
+      },
+      {
+        title: 'Evento 7',
+        start: '2019-08-12T12:00:00'
+      },
+      {
+        title: 'Evento 8',
+        start: '2019-08-12T14:30:00'
+      },
+      {
+        title: 'Evento 9',
+        start: '2019-08-12T17:30:00'
+      },
+      {
+        title: 'Evento 10',
+        start: '2019-08-12T20:00:00'
+      }
+      ]
+    });
+
+    calendar.render();
+  });
+
+</script> -->
+
 
 </head>
 <body>
@@ -41,7 +138,6 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Cadastro
-
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="CadastroCliente.html">Clientes</a>
@@ -50,35 +146,118 @@
             <a class="dropdown-item" href="CadastroAtendimento.html">Atendimento</a>
           </div>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="relatorios.html">Relatórios</a>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Relatórios
+         </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="RelatorioProcedimentos.html">Procedimentos realizados</a>
+          <a class="dropdown-item" href="RelatorioAtendimentos.html">Atendimentos</a>
+          <a class="dropdown-item" href="RelatorioAtendimentos.html">Receita Mensal</a>
+        </div>
       </li>
-     
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto">
-       <li class="nav-item">
-        <a class="nav-link" href="configuracoes.html"> <img src="svg/gear.svg"> </a>
-      </li>
-     <li class="nav-item">
-      <a class="nav-link" href="configuracoes.html"><img src="svg/person.svg"></a>
     </li>
+
   </ul>
+
+  <ul class="nav navbar-nav ml-auto">
+   <li class="nav-item">
+    <a class="nav-link" href="configuracoes.html"> <img src="svg/gear.svg"> </a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <img src="svg/person.svg">
+   </a>
+   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="perfil.html">Meus Dados</a>
+    <a class="dropdown-item" href="alterarsenha.html">Mudar Senha</a>
+  </div>
+</li>
+
+
+</li>
+</ul>
 </div>
 </nav>
 
 </header>
 
-
+<!-- <article>
+  <section>
+    <div id='calendar' class="fc fc-ltr fc-unthemed" style="max-width: 900px; background-color: white;"></div>
+ </section>
+</article> -->
 
 <article>
-  <section>
-    <div class="text-center fixed">
-      <iframe src="https://calendar.google.com/calendar/embed?height=900&amp;wkst=2&amp;bgcolor=%23A79B8E&amp;ctz=America%2FSao_Paulo" style="border-width:0" width="1200" height="700" frameborder="0" scrolling="no"></iframe>
-   </div>
- </section>
+  <div class="container">
+
+    <div class="pb-2 mt-4 mb-2 border-bottom">
+      <h1>Próximos horários marcados:</h1>
+    </div>
+    <table class="table table-striped  table-bordered table-hover table-condensed">
+      <thead class="thead-light">
+        <tr>
+         <th>Nome </th> 
+         <th>Data </th> 
+         <th>Hora </th>
+         <th>Procedimento</th> 
+       </tr>
+     </thead>
+     <tbody>
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+      <tr class="table-hover">
+        <td>Leonardo Rodrigues</td>
+        <td>22/08/2019</td>
+        <td>14:00</td>
+        <td>Limpeza de Pele</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
 </article>
 </body>
 </html>

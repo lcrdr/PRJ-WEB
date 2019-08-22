@@ -20,7 +20,6 @@
 
 
 <body>
-
 <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -46,99 +45,193 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Cadastro
-
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="CadastroCliente.html">Clientes</a>
             <a class="dropdown-item" href="CadastroProcedimento.html">Procedimentos</a>
             <a class="dropdown-item" href="CadastroTransacao.html">Transação</a>
+            <a class="dropdown-item" href="CadastroAtendimento.html">Atendimento</a>
           </div>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="relatorios.html">Relatórios</a>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Relatórios
+         </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="RelatorioProcedimentos.html">Procedimentos realizados</a>
+          <a class="dropdown-item" href="RelatorioAtendimentos.html">Atendimentos</a>
+          <a class="dropdown-item" href="RelatorioAtendimentos.html">Receita Mensal</a>
+        </div>
       </li>
-     
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto">
-       <li class="nav-item">
-        <a class="nav-link" href="configuracoes.html"> <img src="svg/gear.svg"> </a>
-      </li>
-     <li class="nav-item">
-      <a class="nav-link" href="perfil.html"><img src="svg/person.svg"></a>
     </li>
+
   </ul>
+
+  <ul class="nav navbar-nav ml-auto">
+   <li class="nav-item">
+    <a class="nav-link" href="configuracoes.html"> <img src="svg/gear.svg"> </a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <img src="svg/person.svg">
+   </a>
+   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="perfil.html">Meus Dados</a>
+    <a class="dropdown-item" href="alterarsenha.html">Mudar Senha</a>
+  </div>
+</li>
+
+
+</li>
+</ul>
 </div>
 </nav>
 
 </header>
 
-<div class="container">
-  <div class="MyProfile">
-    <h1>Meu perfil</h1>
-  </div>
+<div id="page-content-wrapper">
+  <div class="page-content inset">
+    <div class="row">
+      <div class="col-md-11 text-center">
+        <div class="row">
+          <div class="container p-5 bg-white">
+            <form method="post" action="usuarios/salvar"
+            th:object="${usuarioObj}">
+            <div class="row">
+              <div class="col-12">
+                <h3 class="mb-5">Dados do usuário</h3>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-10">
+                <label for="nome">Nome:</label> <input type="text"
+                class="form-control" name="nome" id="nome"
+                placeholder="Nome do Funcionário" th:field="*{nome}" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-3" id=".dateNasc">
+                <label for="dataNasc">Data de nascimento</label> <input
+                type="date" class="form-control" id="dataNasc"
+                name="dataNasc" placeholder="Data de nascimento"
+                th:field="*{dataNasc}" autocomplete="off" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="cpf">CPF</label> <input type="text"
+                class="form-control" name="cpf" id="cpf" placeholder="CPF"
+                th:field="*{cpf}" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="sexo">Sexo:</label> <select name="sexo" id="sexo"
+                class="form-control" required>
+                <option th:value="0" disabled selected>Escolha...</option>
+                <option th:value="false" th:selected="*{sexo} == false">Masculino
+                </option>
+                <option th:value="true" th:selected="*{sexo} == true">Feminino</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="fone">Telefone:</label> <input type="text"
+              class="form-control" name="telefone" id="phone-number"
+              placeholder="Telefone" th:field="*{telefone}" required>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-12">
+              <h3 class="mb-5">Endereço</h3>
+            </div>
+          </div>
+          <div class="form-row text-center">
+            <div class="form-group col-md-2">
+              <label for="cep">Cep:</label> <input type="text"
+              class="form-control" name="cep" id="cep" placeholder="Cep"
+              th:field="*{cep}" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="rua">Rua:</label> <input type="text"
+              class="form-control" name="rua" id="rua" placeholder="Rua"
+              th:field="*{rua}" required>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="numero">Numero:</label> <input type="text"
+              class="form-control" name="num" id="num"
+              placeholder="Numero" th:field="*{num}" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="bairro">Bairro:</label> <input type="text"
+              class="form-control" name="bairro" id="bairro"
+              placeholder="Bairro" th:field="*{bairro}" required>
+            </div>
+          </div>
+          <div class="form-row text-center">
+            <div class="form-group col-md-4">
+              <label for="comp">Complemento:</label> <input type="text"
+              class="form-control" name="comp" id="comp"
+              placeholder="Complemento" th:field="*{comp}" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="cidade">Cidade:</label> <input type="text"
+              class="form-control" name="cidade" id="cidade"
+              placeholder="Cidade" th:field="*{cidade}" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="estado">Estado:</label> <select name="estado"
+              id="estado" class="form-control" required>
+              <option th:value="0" disabled selected>Escolha...</option>
+              <option th:value="AC" th:selected="*{estado} == 'AC'">Acre</option>
+              <option th:value="AL" th:selected="*{estado} == 'AL'">Alagoas</option>
+              <option th:value="AP" th:selected="*{estado} == 'AP'">Amapá</option>
+              <option th:value="AM" th:selected="*{estado} == 'AM'">Amazonas</option>
+              <option th:value="BA" th:selected="*{estado} == 'BA'">Bahia</option>
+              <option th:value="CE" th:selected="*{estado} == 'CE'">Ceará</option>
+              <option th:value="DF" th:selected="*{estado} == 'DF'">Distrito
+              Federal</option>
+              <option th:value="ES" th:selected="*{estado} == 'ES'">Espírito
+              Santo</option>
+              <option th:value="GO" th:selected="*{estado} == 'GO'">Goiás</option>
+              <option th:value="MA" th:selected="*{estado} == 'MA'">Maranhão</option>
+              <option th:value="MT" th:selected="*{estado} == 'MT'">Mato
+              Grosso</option>
+              <option th:value="MS" th:selected="*{estado} == 'MS'">Mato
+              Grosso do Sul</option>
+              <option th:value="MG" th:selected="*{estado} == 'MG'">Minas
+              Gerais</option>
+              <option th:value="PA" th:selected="*{estado} == 'PA'">Pará</option>
+              <option th:value="PB" th:selected="*{estado} == 'PB'">Paraíba</option>
+              <option th:value="PR" th:selected="*{estado} == 'PR'">Paraná</option>
+              <option th:value="PE" th:selected="*{estado} == 'PE'">Pernambuco
+              </option>
+              <option th:value="PI" th:selected="*{estado} == 'PI'">Piauí</option>
+              <option th:value="RJ" th:selected="*{estado} == 'RJ'">Rio
+              de Janeiro</option>
+              <option th:value="RN" th:selected="*{estado} == 'RN'">Rio
+              Grande do Norte</option>
+              <option th:value="RS" th:selected="*{estado} == 'RS'">Rio
+              Grande do Sul</option>
+              <option th:value="RO" th:selected="*{estado} == 'RO'">Rondônia</option>
+              <option th:value="RR" th:selected="*{estado} == 'RR'">Roraima</option>
+              <option th:value="SC" th:selected="*{estado} == 'SC'">Santa
+              Catarina</option>
+              <option th:value="SP" th:selected="*{estado} == 'SP'">São
+              Paulo</option>
+              <option th:value="SE" th:selected="*{estado} == 'SE'">Sergipe</option>
+              <option th:value="TO" th:selected="*{estado} == 'TO'">Tocantins</option>
+            </select>
+          </div>
+        </div>
+        <hr>
+        <button sec:authorize="hasAnyRole('ROLE_ADMIN')" type="submit" class="btn btn-danger">Salvar</button>
+        <button type="button" class="btn btn-danger">Voltar</button></a>
 
-  <hr>
-  <!-- edit form column -->
-  <div class="col-md-9 personal-info">
-    <h3>Dados</h3>
 
-    <form class="form-horizontal" role="form">
-      <div class="form-group">
-        <label class="col-lg-3 control-label">Nome</label>
-        <div class="col-lg-8">
-          <input class="form-control" type="text">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-lg-3 control-label">Sobrenome</label>
-        <div class="col-lg-8">
-          <input class="form-control" type="text">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-lg-3 control-label">Company:</label>
-        <div class="col-lg-8">
-          <input class="form-control" type="text" value="">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-lg-3 control-label">Email</label>
-        <div class="col-lg-8">
-          <input class="form-control" type="text">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-md-3 control-label">Usuário</label>
-        <div class="col-md-8">
-          <input class="form-control" type="text">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-md-3 control-label">Nova senha</label>
-        <div class="col-md-8">
-          <input class="form-control" type="password">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-md-3 control-label">Confirmar nova senha</label>
-        <div class="col-md-8">
-          <input class="form-control" type="password>
-        </div>
-      </div>
-      <div class="form-group>
-        <label class="col-md-3 control-label"></label>
-        <div class="col-md-8">
-          <input type="button" class="btn btn-primary" value="Salvar">
-          <span></span>
-          <input type="reset" class="btn btn-default" value="Cancelar">
-        </div>
-      </div>
-    </form>
+
+      </form>
+
+    </div>
   </div>
 </div>
 </div>
-<hr>
+
 </body>
