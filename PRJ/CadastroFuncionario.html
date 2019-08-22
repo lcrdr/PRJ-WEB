@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Cadastro</title>
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de Funcionário</title>
 
-  <!-- Bootstrap -->
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/estilo.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
-  <script type="text/javascript">
-    $('.dinheiro').mask('#.##0,00', {reverse: true});
-  </script>
-</head>
-<body>
-  <header>
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+      <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -86,10 +83,9 @@
 
 </header>
 
-
 <div class="container">
   <div class="MyProfile">
-    <h1>Novo Procedimento</h1>
+    <h1>Novo Funcionário</h1>
   </div>
 
   <hr>
@@ -104,29 +100,61 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-lg-3 control-label">Valor a ser cobrado</label>
+        <label class="col-lg-3 control-label">Sobrenome</label>
         <div class="col-lg-8">
-          <label for="dinheiro">R$</label><input type="text" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" />
+          <input class="form-control" type="text">
         </div>
       </div>
-
       <div class="form-group">
-        <label class="col-lg-3 control-label">Duração (Horas)</label>
+        <label class="col-lg-3 control-label">Sexo</label>
         <div class="col-lg-8">
-          <input type="text" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" />
+          <select class="col-lg-3 form-control" id="exampleFormControlSelect1">
+            <option>Masculino</option>
+            <option>Feminino</option>
+            <option>Outro</option>
+          </select>
         </div>
       </div>
-
       <div class="form-group">
-        <label class="col-lg-3 control-label">Observação</label>
+        <label class="col-lg-3 control-label">Cargo</label>
         <div class="col-lg-8">
-          <!-- <input type="multiline" name="dinheiro" class="dinheiro form-control" style="display:inline-block; width: 600px; height: 100px;" /> -->
-         <textarea class="form-control" rows="5" id="comment"></textarea>
-            
-          </textarea>
+          <select class="col-lg-3 form-control" id="exampleFormControlSelect1">
+            <option>Esteticisa</option>
+            <option>Manicure</option>
+            <option>Gerente</option>
+          </select>
         </div>
       </div>
-
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Logradouro</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Numero</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Complemento</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Profissão</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text" value="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Email</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text">
+        </div>
+      </div>
       <div class="form-group">
         <label class = "col-md-3 control-label"></label>
         <div class="col-md-8">
@@ -135,8 +163,6 @@
           <input type="reset" class="btn btn-default" value="Cancelar">
         </div>
       </div>
-
-
     </form>
   </div>
 </div>
