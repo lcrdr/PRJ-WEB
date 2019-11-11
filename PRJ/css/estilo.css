@@ -3,10 +3,54 @@
   --input-padding-y: .75rem;
 }
 
-body {
-  background: #f5428d;
-  background: linear-gradient(to right, #f0dadd, #eacbc8);
+.article-inicio{
+  background-color: white;
 }
+
+.row{
+  display: flex;
+}
+
+.class{
+  float: 50%;
+}
+.erroLogin{
+  text-align: center;
+  color: red;
+}
+body {
+  /*background: linear-gradient(to right, #f0dadd, #eacbc8);*/
+  background-color: #FFE9FB;
+ background-image: url("../img/fin.jpeg");
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+     min-height: 100vh;
+   width: 100vw;
+   overflow-x: hidden;
+   overflow: overlay;
+  position: relative;
+ }
+
+ #body-index{
+   background-image: url("../img/backgroundnoimg.jpg");
+   height: 100vh;
+   width: 100%;
+/*   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;*/
+
+        /*overflow-y: hidden ! important;*/
+        /*overflow-x: hidden ! important;*/
+/*        background-color: #f8f8f8;
+        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;*/
+        position: relative;
+ }
+
 container {
 	top:50%;
 }
@@ -33,7 +77,6 @@ container {
 
 .form-signin .btn {
   font-size: 80%;
-  border-radius: 5rem;
   letter-spacing: .1rem;
   font-weight: bold;
   padding: 1rem;
@@ -139,4 +182,62 @@ container {
 
 .MyProfileLabel{
   text-align: center;
+}
+
+.desabilitado{
+  visibility: hidden;
+}
+
+.habilitado{
+  visibility: visible;
+}
+
+.cardInicio:hover {
+  cursor: pointer;
+}
+
+.div-consulta{
+  background-color: white;
+  padding: 1rem;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.formCadastroN{
+  width: 100%;
+}
+
+.class-btn{
+  align-content: center;
+
+}
+
+.ajustebotao{
+  width: 100%;
+  align-content: center;
 }
