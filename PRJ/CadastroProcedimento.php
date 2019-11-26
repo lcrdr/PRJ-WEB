@@ -72,7 +72,7 @@ echo "<script> location.href='consultaProcedimento.php'; </script>";
   </script>
 </head>
 <body>
- <header>
+  <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -107,7 +107,7 @@ echo "<script> location.href='consultaProcedimento.php'; </script>";
             <a class="dropdown-item" href="CadastroFuncionario.php">Funcionário</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <!-- li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Relatórios
           </a>
@@ -116,7 +116,7 @@ echo "<script> location.href='consultaProcedimento.php'; </script>";
             <a class="dropdown-item" href="RelatorioAtendimentos.php">Atendimentos</a>
             <a class="dropdown-item" href="RelatorioReceitas.php">Receita Mensal</a>
           </div>
-        </li>
+        </li> -->
       </li>
     </ul>
 
@@ -199,14 +199,14 @@ echo "<script> location.href='consultaProcedimento.php'; </script>";
               <input class="form-control" type="text" name="nomeProc">
             </div>
             <div class="form-group">
-              <label class="col-lg-3 control-label">Valor a ser cobrado</label>
+              <label class="col-lg-5 control-label">Valor a ser cobrado</label>
               <div class="col-lg-8">
                 <label for="dinheiro">R$</label>
                 <input type="text" class="dinheiro form-control" style="display:inline-block" name="valorProc" />
               </div>
             </div>
             <div class="form-group">
-             <label class="col-lg-3 control-label">Duração (Horas)</label>
+             <label class="col-lg-5 control-label">Duração (Horas)</label>
              <div class="col-lg-8">
               <input type="text" id="dinheiro" class="dinheiro form-control" style="display:inline-block" name="duracao" />
             </div>

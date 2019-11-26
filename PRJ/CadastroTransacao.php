@@ -169,7 +169,7 @@ $(document).ready(function(){
             <a class="dropdown-item" href="CadastroFuncionario.php">Funcionário</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <!-- li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Relatórios
           </a>
@@ -178,7 +178,7 @@ $(document).ready(function(){
             <a class="dropdown-item" href="RelatorioAtendimentos.php">Atendimentos</a>
             <a class="dropdown-item" href="RelatorioReceitas.php">Receita Mensal</a>
           </div>
-        </li>
+        </li> -->
       </li>
     </ul>
 
@@ -223,7 +223,7 @@ $(document).ready(function(){
             <!-- <label class="col-lg-3 control-label"></label> -->
             <div class="col-lg-8">
               <label>Nome agendamento</label>
-                <select class="col-lg-6 form-control" id="exampleFormControlSelect1" name="procedimento">
+                <select class="col-lg-10 form-control" id="exampleFormControlSelect1" name="procedimento">
                   <?php while ($dadoProc = $conProc->fetch_array()) { ?>
                     <option><?php echo $dadoProc["nome"]; ?></option>
                   <?php  } ?>
@@ -231,8 +231,8 @@ $(document).ready(function(){
             </div>
 
             <div class="form-group">
-               <label class="col-lg-6 control-label">Valor pago</label>
-              <div class="col-lg-8">
+               <label class="col-lg-10 control-label">Valor pago</label>
+              <div class="col-lg-10">
                <input type="text" name="valorpago" > <br> <br>
              </div>
             </div>
@@ -241,7 +241,7 @@ $(document).ready(function(){
             <div class="form-group">
               <label class="col-lg-6 control-label">Selecionar Data</label>
            <div class="col-lg-8">
-            <input type="text" name="data" class="date">
+            <input type="date" name="data" class="date">
           </div>
           </div>
         </div>

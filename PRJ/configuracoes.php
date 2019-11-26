@@ -21,7 +21,7 @@
 
 <body>
 
-  <header>
+    <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -56,7 +56,7 @@
             <a class="dropdown-item" href="CadastroFuncionario.php">Funcionário</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <!-- li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Relatórios
           </a>
@@ -65,12 +65,12 @@
             <a class="dropdown-item" href="RelatorioAtendimentos.php">Atendimentos</a>
             <a class="dropdown-item" href="RelatorioReceitas.php">Receita Mensal</a>
           </div>
-        </li>
+        </li> -->
       </li>
     </ul>
 
     <ul class="nav navbar-nav ml-auto">
-      
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <img src="svg/person.svg">

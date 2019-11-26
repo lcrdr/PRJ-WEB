@@ -116,6 +116,15 @@ echo "<script> location.href='consultaClientes.php'; </script>";
     }
   }
 
+  function validacaoIdade(field) {
+    var age=document.getElementById('idade').value;
+
+    if (isNaN(age) || age < 1 || age > 100)
+    { 
+      document.getElementById("idade").value = "";
+    }
+  }
+
 
 </script>
 
@@ -130,7 +139,7 @@ echo "<script> location.href='consultaClientes.php'; </script>";
 </head>
 <body>
 
-  <header>
+    <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -165,7 +174,7 @@ echo "<script> location.href='consultaClientes.php'; </script>";
             <a class="dropdown-item" href="CadastroFuncionario.php">Funcionário</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <!-- li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Relatórios
           </a>
@@ -174,7 +183,7 @@ echo "<script> location.href='consultaClientes.php'; </script>";
             <a class="dropdown-item" href="RelatorioAtendimentos.php">Atendimentos</a>
             <a class="dropdown-item" href="RelatorioReceitas.php">Receita Mensal</a>
           </div>
-        </li>
+        </li> -->
       </li>
     </ul>
 
@@ -226,13 +235,13 @@ echo "<script> location.href='consultaClientes.php'; </script>";
             <div class="form-group">
               <label class="col-lg-3 control-label">Idade</label>
               <div class="col-lg-8">
-                <input class="form-control" type="number" min="0" name="idade" id="idade" required>
+                <input class="form-control" type="number" min="0" name="idade" id="idade" required onblur="validacaoIdade(formCadastro.idade)">
               </div>
             </div>
             <div class="form-group">
               <label class="col-lg-3 control-label">Sexo</label>
               <div class="col-lg-8">
-                <select class="col-lg-3 form-control" id="exampleFormControlSelect1" name="sexo" required>
+                <select class="col-lg-12 form-control" id="exampleFormControlSelect1" name="sexo" required>
                   <option value="Masculino">Masculino</option>
                   <option value="Feminino">Feminino</option>
                   <option value="Outro">Outro</option>

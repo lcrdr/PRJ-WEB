@@ -3,10 +3,10 @@ session_start();
 
 include("conexao.php");
 
-$consulta = "SELECT nome, COUNT(*) as qtd FROM agendamento GROUP BY nome";
+$consultaProcedimentosRel = "SELECT procedimento, COUNT(*) as qtd FROM agendamento GROUP BY procedimento";
 // $consultaQtd = "SELECT COUNT(*) as conta from cliente";
 
-$con = $mysqli->query($consulta) or die ($mysqli->error);
+$conRelatorios = $mysqli->query($consultaProcedimentosRel) or die ($mysqli->error);
 // $conQTD = $mysqli->query($consultaQtd) or die ($mysqli->error);
 
 $nomes = array();
@@ -14,8 +14,8 @@ $quantidades = array();
 
 $quantidadeUsuarios = 0;
 
-while ($dado = $con->fetch_array()) {
-  array_push($nomes, $dado["nome"]);
+while ($dado = $conRelatorios->fetch_array()) {
+  array_push($nomes, $dado["procedimento"]);
     array_push($quantidades, $dado["qtd"]);
 
 }
@@ -48,26 +48,32 @@ $Y = 40;
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 
   <script type="text/javascript">
     function geraRelatorio(){
       var doc = new jsPDF()
+      var img = new Image()
+      img.src = 'img/image.png'
 
       //Gerar Nomes
-      doc.text('Procedimentos realizados:', 10, 10)
-      doc.text('Nome do procedimento:', 50, 40)
-      doc.text('Quantidade', 150, 40  )
+      doc.text('Procedimentos realizados', 70, 20)
+      doc.text('Nome do procedimento', 40, 40)
+      doc.text('Quantidade', 140, 40  )
 
 
       <?php for($i = 0; $i<$value;$i++){ ?>
 
-        doc.text('<?php echo $nomes[$i] ?>', 50, <?php echo $X ?>)
+        doc.text('<?php echo $nomes[$i] ?>', 40, <?php echo $X ?>)
         doc.text('<?php echo $quantidades[$i] ?>', 150, <?php echo $X ?> )
 
         <?php $X = $X + 10; ?>
         <?php $Y = $Y + 10; ?>
 
       <?php  } ?>
+
+              doc.addImage(img, 'png', 160, 0, 40, 40) 
+
 
       doc.save('RelatorioProcedimentos.pdf')
 

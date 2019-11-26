@@ -3,16 +3,16 @@ session_start();
 
 include("conexao.php");
 
-$consulta = "SELECT nome FROM cliente";
+$consultaDeClientes = "SELECT nome FROM cliente";
 $consultaQtd = "SELECT COUNT(*) as conta from cliente";
 
-$con = $mysqli->query($consulta) or die ($mysqli->error);
+$conClientes = $mysqli->query($consultaDeClientes) or die ($mysqli->error);
 $conQTD = $mysqli->query($consultaQtd) or die ($mysqli->error);
 
 $nomes = array();
 $quantidadeUsuarios = 0;
 
-while ($dado = $con->fetch_array()) {
+while ($dado = $conClientes->fetch_array()) {
   array_push($nomes, $dado["nome"]);
 }
 
@@ -25,6 +25,7 @@ while ($dado = $conQTD->fetch_array()) {
 $value = sizeof($nomes);
 $X = 40;
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -45,6 +46,8 @@ $X = 40;
   <script type="text/javascript">
     function geraRelatorio(){
       var doc = new jsPDF()
+      var img = new Image();
+      img.src = 'img/image.png'
 
       //Gerar Nomes
       doc.text('Lista de usuários cadastrados no sistema:', 10, 10)
@@ -55,11 +58,9 @@ $X = 40;
         <?php $X = $X + 10; ?>
       <?php  } ?>
 
+        doc.addImage(img, 'png', 160, 0, 40, 40) 
 
-
-        doc.text('<?php echo $quantidadeUsuarios ?>', 10, 50) 
-
-      doc.save('a4.pdf')
+      doc.save('RelatorioUsuarios.pdf')
 
       //Listar total de usuários do sistema
 

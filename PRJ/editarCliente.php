@@ -117,6 +117,15 @@ if(isset($_POST['confirmar'])) {
   }
 
 
+  function validacaoIdade(field) {
+    var age=document.getElementById('idade').value;
+
+    if (isNaN(age) || age < 1 || age > 100)
+    { 
+      document.getElementById("idade").value = "";
+    }
+  }
+
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -126,7 +135,7 @@ if(isset($_POST['confirmar'])) {
 </head>
 <body>
 
- <header>
+  <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -161,7 +170,7 @@ if(isset($_POST['confirmar'])) {
             <a class="dropdown-item" href="CadastroFuncionario.php">Funcionário</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <!-- li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Relatórios
           </a>
@@ -170,7 +179,7 @@ if(isset($_POST['confirmar'])) {
             <a class="dropdown-item" href="RelatorioAtendimentos.php">Atendimentos</a>
             <a class="dropdown-item" href="RelatorioReceitas.php">Receita Mensal</a>
           </div>
-        </li>
+        </li> -->
       </li>
     </ul>
 
@@ -194,7 +203,6 @@ if(isset($_POST['confirmar'])) {
 </nav>
 
 </header>
-
 <div class="container">
   <div class="MyProfile">
     <h1>Editar Cliente</h1>
@@ -204,7 +212,7 @@ if(isset($_POST['confirmar'])) {
   <!-- edit form column -->
   <div class="col-sm-12 personal-info article-inicio row">
 
-    <form class="formCadastroN" action="editarCliente.php?p=cadastrar" method="POST">
+    <form class="formCadastroN" action="editarCliente.php?p=cadastrar" method="POST" name="formEditar">
       <div class="row">
         <div class="column">
           <div class="form-group">
@@ -230,7 +238,7 @@ if(isset($_POST['confirmar'])) {
             <label class="col-lg-3 control-label">Idade</label>
             <div class="col-lg-8">
               <!-- <input class="form-control" type="text" name="idade" id="idade"> -->
-              <input class="form-control" type="text" name="idade" required="true" id="idade" value="<?php echo $dado["idade"] ?>">
+              <input class="form-control" type="text" name="idade" required="true" id="idade" value="<?php echo $dado["idade"] ?>" onblur="validacaoIdade(formEditar.idade)">
             </div>
           </div>
           <div class="form-group">

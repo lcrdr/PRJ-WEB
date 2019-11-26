@@ -137,7 +137,7 @@ if(isset($_POST['excluir'])) {
 
 </head>
 <body>
-  <header>
+    <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -172,7 +172,7 @@ if(isset($_POST['excluir'])) {
             <a class="dropdown-item" href="CadastroFuncionario.php">Funcionário</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <!-- li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Relatórios
           </a>
@@ -181,7 +181,7 @@ if(isset($_POST['excluir'])) {
             <a class="dropdown-item" href="RelatorioAtendimentos.php">Atendimentos</a>
             <a class="dropdown-item" href="RelatorioReceitas.php">Receita Mensal</a>
           </div>
-        </li>
+        </li> -->
       </li>
     </ul>
 
@@ -205,6 +205,7 @@ if(isset($_POST['excluir'])) {
 </nav>
 
 </header>
+
 <article>
   <section>
     <div class="container">
@@ -221,31 +222,31 @@ if(isset($_POST['excluir'])) {
 
             <div class="column">
               <div class="form-group">
-                <label class="col-lg-3 control-label">Caracterizar procedimento</label>
-                <div class="col-lg-6">
+                <label class="col-lg-12 control-label">Caracterizar procedimento</label>
+                <div class="col-lg-10">
                   <input class="form-control" type="text" name="caracProc">  
                 </div>
 
-                <label class="col-lg-3 control-label">Selecionar cliente</label>
-                <div class="col-lg-6">
-                 <select class="col-lg-6 form-control" id="exampleFormControlSelect1" name="cliente">
+                <label class="col-lg-12 control-label">Selecionar cliente</label>
+                <div class="col-lg-12">
+                 <select class="col-lg-10 form-control" id="exampleFormControlSelect1" name="cliente">
                   <?php while ($dadoCli = $conCli->fetch_array()) { ?>
                     <option><?php echo $dadoCli["nome"]; ?></option>
                   <?php  } ?>
                 </select>          </div>
 
-                <label class="col-lg-3 control-label">Selecionar procedimento</label>
-                <div class="col-lg-6">
-                  <select class="col-lg-6 form-control" id="exampleFormControlSelect1" name="procedimento">
+                <label class="col-lg-12 control-label">Selecionar procedimento</label>
+                <div class="col-lg-12">
+                  <select class="col-lg-10 form-control" id="exampleFormControlSelect1" name="procedimento">
                   <?php while ($dadoProc = $conProc->fetch_array()) { ?>
                     <option><?php echo $dadoProc["nome"]; ?></option>
                   <?php  } ?>
                 </select> 
               </div>
 
-              <label class="col-lg-3 control-label">Funcionario que irá realizar o procedimento</label>
-              <div class="col-lg-6">
-               <select class="col-lg-6 form-control" id="selectFunc" name="funcionario">
+              <label class="col-lg-12 control-label">Funcionario que irá realizar o procedimento</label>
+              <div class="col-lg-12">
+               <select class="col-lg-10 form-control" id="selectFunc" name="funcionario">
               <?php while ($dadoFunc = $con->fetch_array()) { ?>
                 <option><?php echo $dadoFunc["nome"]; ?></option>
               <?php  } ?>
@@ -258,21 +259,21 @@ if(isset($_POST['excluir'])) {
 
           <div class="column">
             <div class="form-group">
-              <label class="col-lg-3 control-label">Valor (R$)</label>
-              <div class="col-lg-8">
+              <label class="col-lg-12 control-label">Valor (R$)</label>
+              <div class="col-lg-10">
               <input class="form-control" type="text" name="valor">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-lg-3 control-label">Selecione a data</label>
-              <div class="col-lg-8">
+              <label class="col-lg-12 control-label">Selecione a data</label>
+              <div class="col-lg-10">
             <input type="date" class="form-control" name="data" format="dd/MM/YYYY">
 
               </div>
             </div>
             <div class="form-group">
-              <label class="col-lg-3 control-label">Selecione a hora</label>
-              <div class="col-lg-8">
+              <label class="col-lg-12 control-label">Selecione a hora</label>
+              <div class="col-lg-10">
                 <input type="text" class="form-control" name="hora"></div>
             </div>
            

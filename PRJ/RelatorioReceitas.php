@@ -1,3 +1,31 @@
+<?php
+session_start();
+
+include("conexao.php");
+
+$consultaReceitas = "SELECT SUM(valorPago) AS soma FROM recebimento";
+// $consultaQtd = "SELECT COUNT(*) as conta from cliente";
+
+$conReceitas = $mysqli->query($consultaReceitas) or die ($mysqli->error);
+// $conQTD = $mysqli->query($consultaQtd) or die ($mysqli->error);
+
+$quantidadeUsuarios = 0;
+
+while ($dado = $conReceitas->fetch_array()) {
+  $Valor = $dado["soma"];
+
+}
+
+
+
+// while ($dado = $conQTD->fetch_array()) {
+//   $quantidadeUsuarios = $dado["conta"];
+// }
+
+$X = 60;
+$Y = 40;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,11 +40,33 @@
   <link href="css/estilo.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+    function geraRelatorio(){
+      var doc = new jsPDF()
+      var img = new Image()
+      img.src = 'img/image.png'
+            doc.text('Relatório de receitas',70, 20)
+
+      //Gerar Nomes
+      doc.text('Valor total das receitas:', 40, 40)
+      doc.text('R$ <?php echo $Valor?>', 140, 40  )
+
+      doc.addImage(img, 'png', 160, 0, 40, 40) 
+
+
+      doc.save('RelatorioReceitas.pdf')
+
+      //Listar total de usuários do sistema
+
+    }
+  </script>
 
 </head>
 <body>
-    <header>
+ <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -65,7 +115,7 @@
     </ul>
 
     <ul class="nav navbar-nav ml-auto">
-      
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <img src="svg/person.svg">
@@ -84,3 +134,5 @@
 </nav>
 
 </header>
+
+<button onclick="geraRelatorio()">Botão</button>
